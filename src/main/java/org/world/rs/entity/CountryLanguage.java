@@ -22,7 +22,7 @@ import javax.persistence.Table;
 4 rows in set (0.00 sec)
  */
 @Entity
-@Table(name="CountryLanguage")
+@Table(name="countrylanguage")
 public class CountryLanguage implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
