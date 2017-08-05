@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.world.rs.entity.City;
 import org.world.rs.repository.CityRepository;
@@ -37,10 +36,5 @@ public class CityController {
 		return cityRepository.getByCountyCode(countryCode);
 	}
 	
-//	@RequestMapping(value="/city/country/name/{countryName}", method = RequestMethod.GET)
-//	@ResponseBody
-//	public List<City> getByCountyName(@PathVariable String countryName) {
-//		return cityRepository.getByCountyName(countryName);
-//	}
 
 }
