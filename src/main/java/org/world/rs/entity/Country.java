@@ -90,13 +90,23 @@ public class Country implements Serializable {
 	
 	
 	public enum Continent {
-		Asia,
-		Europe,
-		North_America,
-		Africa,
-		Oceania,
-		Antarctica,
-		South_America
+		Asia("Asia"),
+		Europe("Europe"),
+		North_America("North America"),
+		Africa("Africa"),
+		Oceania("Oceania"),
+		Antarctica("Antarctica"),
+		South_America("South America");
+		
+		private String displayName;
+
+		Continent(String displayName) {
+	        this.displayName = displayName;
+	    }
+
+	    public String displayName() { return displayName; }
+	    
+	    @Override public String toString() { return displayName; }
 	}
 
 	public String getCode() {
@@ -119,7 +129,6 @@ public class Country implements Serializable {
 	public Continent getContinent() {
 		return continent;
 	}
-	
 	
 	public void setContinent(Continent continent) {
 		this.continent = continent;
