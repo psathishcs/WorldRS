@@ -31,7 +31,7 @@ public class CountryLanguage implements Serializable{
 	
 	@EmbeddedId
 	private CountryLanguagePK countryLanguagePK;
-	private IsOfficial isOfficial;
+	private char isOfficial;
 	private float percentage;
 	
 	public enum IsOfficial{
@@ -48,12 +48,11 @@ public class CountryLanguage implements Serializable{
 		this.countryLanguagePK = countryLanguagePK;
 	}
 	
-    @Enumerated(EnumType.STRING)
-	public IsOfficial getIsOfficial() {
+	public char getIsOfficial() {
 		return isOfficial;
 	}
 
-	public void setIsOfficial(IsOfficial isOfficial) {
+	public void setIsOfficial(char isOfficial) {
 		this.isOfficial = isOfficial;
 	}
 
