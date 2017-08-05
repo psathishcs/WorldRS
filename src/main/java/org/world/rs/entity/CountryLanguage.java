@@ -39,7 +39,7 @@ public class CountryLanguage implements Serializable{
 		F
 	}
 
-	@Enumerated(EnumType.STRING)
+
 	public CountryLanguagePK getCountryLanguagePK() {
 		return countryLanguagePK;
 	}
@@ -47,7 +47,8 @@ public class CountryLanguage implements Serializable{
 	public void setCountryLanguagePK(CountryLanguagePK countryLanguagePK) {
 		this.countryLanguagePK = countryLanguagePK;
 	}
-
+	
+    @Enumerated(EnumType.STRING)
 	public IsOfficial getIsOfficial() {
 		return isOfficial;
 	}
