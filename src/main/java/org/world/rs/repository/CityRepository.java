@@ -11,7 +11,7 @@ import org.world.rs.entity.City;
 
 @Repository
 @Transactional
-public class CityRepository implements WorldRepository{
+public class CityRepository {
 	@Autowired
 	private SessionFactory _sessionFactory;
 	
@@ -19,14 +19,33 @@ public class CityRepository implements WorldRepository{
 		return _sessionFactory.getCurrentSession();
 	}
 	
-	@Override
-	public City getByID(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
+	@SuppressWarnings("unchecked")
 	public List<City> getAll() {
-		List<City> citys = getSession().createQuery("from City").list();
-		return citys;
+		return (List<City>) getSession().createQuery("from City").list();
 	}
+
+	public City getByID(Integer id) {
+			return (City) getSession().createQuery("from City where id = :id")
+				.setParameter("id", id).uniqueResult();
+
+	}
+	
+	public City getByName(String name) {
+		return (City) getSession().createQuery("from City where name = :name")
+			.setParameter("name", name).uniqueResult();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<City> getByCountyCode(String countryCode) {
+		return (List<City>) getSession().createQuery("from City where countryCode = :countryCode")
+			.setParameter("countryCode", countryCode);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<City> getByCountyName(String countryName) {
+		return (List<City>) getSession().createQuery("from City ci INNER JOIN Country co ci.countryCode = co.countryCode where co.name = :countryName")
+			.setParameter("countryName", countryName);
+	}
+
+
 }

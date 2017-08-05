@@ -9,6 +9,8 @@ logging:
 entitymanager:
     packagesToScan: org.world.rs
 spring:
+    application:
+        name: WorldRS
     cloud:
         consul:
             host: docker.server.com
