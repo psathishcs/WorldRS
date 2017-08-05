@@ -50,7 +50,7 @@ public class Country implements Serializable {
 	private String name;
 	
 	@Column(name="Continent")
-	private Continent continent;
+	private String continent;
 	
 	@Column(name="Region")
 	private String region;
@@ -125,12 +125,12 @@ public class Country implements Serializable {
 		this.name = name;
 	}
 	
-    @Enumerated(EnumType.STRING)
-	public Continent getContinent() {
+
+	public String getContinent() {
 		return continent;
 	}
 	
-	public void setContinent(Continent continent) {
+	public void setContinent(String continent) {
 		this.continent = continent;
 	}
 
