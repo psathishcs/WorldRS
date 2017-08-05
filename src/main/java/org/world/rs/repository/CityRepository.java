@@ -38,13 +38,13 @@ public class CityRepository {
 	@SuppressWarnings("unchecked")
 	public List<City> getByCountyCode(String countryCode) {
 		return (List<City>) getSession().createQuery("from City where countryCode = :countryCode")
-			.setParameter("countryCode", countryCode);
+			.setParameter("countryCode", countryCode).list();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<City> getByCountyName(String countryName) {
 		return (List<City>) getSession().createQuery("from City ci INNER JOIN Country co ci.countryCode = co.countryCode where co.name = :countryName")
-			.setParameter("countryName", countryName);
+			.setParameter("countryName", countryName).list();
 	}
 
 
