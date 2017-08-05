@@ -23,4 +23,13 @@ public class CountryRepository {
 	public List<Country> getAll(){
 		return (List<Country>) getSession().createQuery("from Country").list();
 	}
+	
+	public Country getByID(String code){
+		return (Country)getSession().createQuery("from Country where code = :code").uniqueResult();
+	}
+	
+	public Country getByName(String name){
+		return (Country)getSession().createQuery("from Country where name = :name").uniqueResult(); 
+	}
+	
 }
