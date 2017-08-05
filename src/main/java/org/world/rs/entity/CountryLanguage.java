@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 /**
@@ -37,7 +39,7 @@ public class CountryLanguage implements Serializable{
 		F
 	}
 
-
+	@Enumerated(EnumType.STRING)
 	public CountryLanguagePK getCountryLanguagePK() {
 		return countryLanguagePK;
 	}

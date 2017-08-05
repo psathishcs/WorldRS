@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -112,11 +114,13 @@ public class Country implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+    @Enumerated(EnumType.STRING)
 	public Continent getContinent() {
 		return continent;
 	}
-
+	
+	
 	public void setContinent(Continent continent) {
 		this.continent = continent;
 	}
