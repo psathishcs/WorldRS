@@ -25,8 +25,8 @@ public class CityController {
 	
 	@RequestMapping(value="/city/{cityID}", method = RequestMethod.GET)
 	@ResponseBody
-	public City getByID(@PathVariable Integer id) {
-		return cityRepository.getByID(id);
+	public City getByID(@PathVariable Integer cityID) {
+		return cityRepository.getByID(cityID);
 	}
 	
 	@RequestMapping(value="/city/name/{name}", method = RequestMethod.GET)
@@ -35,13 +35,13 @@ public class CityController {
 		return cityRepository.getByName(name);
 	}
 	
-	@RequestMapping(value="/city/country/code/{code}", method = RequestMethod.GET)
+	@RequestMapping(value="/city/country/code/{countryCode}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<City> getByCountyCode(@PathVariable String countryCode) {
 		return cityRepository.getByCountyCode(countryCode);
 	}
 	
-	@RequestMapping(value="/city/country/name/{name}", method = RequestMethod.GET)
+	@RequestMapping(value="/city/country/name/{countryName}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<City> getByCountyName(@PathVariable String countryName) {
 		return cityRepository.getByCountyName(countryName);
