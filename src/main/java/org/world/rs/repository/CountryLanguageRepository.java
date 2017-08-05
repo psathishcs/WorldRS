@@ -26,11 +26,11 @@ public class CountryLanguageRepository {
 	
 	@SuppressWarnings("unchecked")
 	public List<CountryLanguage> getByCountryCode(String countryCode) {
-		return (List<CountryLanguage>) getSession().createQuery("from CountryLanguage where CountryLanguagePK.countryCode = :countryCode").list();
+		return (List<CountryLanguage>) getSession().createQuery("from CountryLanguage where countryLanguagePK.countryCode = :countryCode").list();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<CountryLanguage> getByLanguage(String language) {
-		return (List<CountryLanguage>) getSession().createQuery("from CountryLanguage where CountryLanguagePK.language = :language").list();
+		return (List<CountryLanguage>) getSession().createQuery("from CountryLanguage where countryLanguagePK.language = :language").list();
 	}
 }
