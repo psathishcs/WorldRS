@@ -17,26 +17,22 @@ public class CityController {
 	@Autowired
 	private CityRepository cityRepository;
 	
-	@RequestMapping(value="/city", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/city", method = RequestMethod.GET, produces="application/json")
 	public List<City> getAll() {
 		return cityRepository.getAll();
 	}
 	
-	@RequestMapping(value="/city/{cityID}", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/city/{cityID}", method = RequestMethod.GET,  produces="application/json")
 	public City getByID(@PathVariable Integer cityID) {
 		return cityRepository.getByID(cityID);
 	}
 	
-	@RequestMapping(value="/city/name/{name}", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/city/name/{name}", method = RequestMethod.GET,  produces="application/json")
 	public City getByName(@PathVariable String name) {
 		return cityRepository.getByName(name);
 	}
 	
-	@RequestMapping(value="/city/country/code/{countryCode}", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/city/country/code/{countryCode}", method = RequestMethod.GET,  produces="application/json")
 	public List<City> getByCountyCode(@PathVariable String countryCode) {
 		return cityRepository.getByCountyCode(countryCode);
 	}

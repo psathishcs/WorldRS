@@ -16,20 +16,17 @@ public class CountryLanguageController {
 	@Autowired
 	private CountryLanguageRepository countryLanguageRepository;
 	
-	@RequestMapping(value="/language", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/language", method = RequestMethod.GET,  produces="application/json")
 	public List<CountryLanguage> getAll() {
 		return countryLanguageRepository.getAll();
 	}
 	
-	@RequestMapping(value="/language/country/{countryCode}", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/language/country/{countryCode}", method = RequestMethod.GET,  produces="application/json")
 	public List<CountryLanguage> getByCountryCode(@PathVariable String countryCode) {
 		return  countryLanguageRepository.getByCountryCode(countryCode);
 	}
 	
-	@RequestMapping(value="/language/{language}", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping(value="/language/{language}", method = RequestMethod.GET,  produces="application/json")
 	public List<CountryLanguage> getByLanguage(@PathVariable String language) {
 		return   countryLanguageRepository.getByLanguage(language);
 	}
