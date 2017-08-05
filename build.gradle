@@ -26,7 +26,7 @@ apply plugin: "io.spring.dependency-management"
 
 
 jar {
-    baseName = 'WorldRS'
+    baseName = 'worldrs'
     version =  '0.1.0'
 }
 // In this section you declare where to find the dependencies of your project
