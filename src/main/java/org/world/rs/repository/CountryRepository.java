@@ -25,11 +25,14 @@ public class CountryRepository {
 	}
 	
 	public Country getByID(String code){
-		return (Country)getSession().createQuery("from Country where code = :code").uniqueResult();
+		return (Country)getSession().createQuery("from Country where code = :code")
+				.setParameter("code", code).uniqueResult();
 	}
 	
 	public Country getByName(String name){
-		return (Country)getSession().createQuery("from Country where name = :name").uniqueResult(); 
+		return (Country)getSession().createQuery("from Country where name = :name")
+				.setParameter("name", name).uniqueResult(); 
+
 	}
 	
 }
