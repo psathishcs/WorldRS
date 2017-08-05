@@ -41,10 +41,10 @@ public class CityController {
 		return cityRepository.getByCountyCode(countryCode);
 	}
 	
-	@RequestMapping(value="/city/country/name/{countryName}", method = RequestMethod.GET)
-	@ResponseBody
-	public List<City> getByCountyName(@PathVariable String countryName) {
-		return cityRepository.getByCountyName(countryName);
-	}
+//	@RequestMapping(value="/city/country/name/{countryName}", method = RequestMethod.GET)
+//	@ResponseBody
+//	public List<City> getByCountyName(@PathVariable String countryName) {
+//		return cityRepository.getByCountyName(countryName);
+//	}
 
 }
