@@ -43,9 +43,9 @@ public class CityRepository {
 	
 	@SuppressWarnings("unchecked")
 	public List<City> getByCountyName(String countryName) {
-		return (List<City>) getSession().createQuery("from City ci INNER JOIN Country co ci.countryCode = co.countryCode where co.name = :countryName")
+		return (List<City>) getSession().createQuery("FROM City ci INNER JOIN Country co ON ci.countryCode = co.countryCode WHERE co.name = :countryName")
 			.setParameter("countryName", countryName).list();
 	}
-
+	
 
 }
