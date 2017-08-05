@@ -54,6 +54,8 @@ public class WorldDBConfigration {
 
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
+		System.out.println("---------------------------------------------------------SessionFactory" + HIBERNATE_DIALECT);
+		
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
 		sessionFactoryBean.setPackagesToScan(ENTITYMANAGER_PACKAGES_TO_SCAN);
