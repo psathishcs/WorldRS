@@ -1,0 +1,28 @@
+
+server:
+  port: 9000
+  contextPath: /v1/world/api
+
+logging:
+  level:
+    org.world.rs.controllers: INFO
+entitymanager:
+    packagesToScan: org.world.rs
+spring:
+    cloud:
+        consul:
+            host: docker.server.com
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/world
+        username: root
+        password: Jun#2017
+        initialize: true
+        testWhileIdle: 1
+        validationQuery: SELECT 1
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            dialect: org.hibernate.dialect.MySQLDialect
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
