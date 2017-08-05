@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.world.rs.entity.City;
 import org.world.rs.entity.Country;
 import org.world.rs.repository.CountryRepository;
 
@@ -17,7 +16,6 @@ public class CountryController {
 	
 	@Autowired
 	private CountryRepository countryRepository;
-	
 
 	@RequestMapping(value="/country", method = RequestMethod.GET)
 	@ResponseBody
@@ -37,12 +35,28 @@ public class CountryController {
 		return countryRepository.getByName(name);
 	}
 	
-	/*@RequestMapping(value="/country/continent/{continent}", method = RequestMethod.GET)
+	@RequestMapping(value="/country/continent/{continent}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Country> getByContinent(@PathVariable String continent) {
-		return countryRepository.getByName(name);
+		return countryRepository.getByContinent(continent);
 	}
-	*/
 	
+	@RequestMapping(value="/country/region/{region}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Country> getByRegion(@PathVariable String region) {
+		return countryRepository.getByRegion(region);
+	}
+	
+	@RequestMapping(value="/country/gnp/less/{gnp}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Country> getByCountryLessGNP(float gnp){
+		return countryRepository.getByCountryLessGNP(gnp);
+	}
+	
+	@RequestMapping(value="/country/gnp/greate/{gnp}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Country> getByCountryGreateGNP(float gnp){
+		return countryRepository.getByCountryGreateGNP(gnp);
+	}
 
 }

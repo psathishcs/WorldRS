@@ -32,7 +32,31 @@ public class CountryRepository {
 	public Country getByName(String name){
 		return (Country)getSession().createQuery("from Country where name = :name")
 				.setParameter("name", name).uniqueResult(); 
-
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Country> getByContinent(String continent){
+		return (List<Country>) getSession().createQuery("from Country where continent = :continent")
+				.setParameter("continent", continent).list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Country> getByRegion(String region){
+		return (List<Country>) getSession().createQuery("from Country where region = :region")
+				.setParameter("region", region).list();
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Country> getByCountryLessGNP(float gnp){
+		return (List<Country>) getSession().createQuery("from Country where gnp <= :gnp")
+				.setParameter("gnp", gnp).list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Country> getByCountryGreateGNP(float gnp){
+		return (List<Country>) getSession().createQuery("from Country where gnp >= :gnp")
+				.setParameter("gnp", gnp).list();
 	}
 	
 }
