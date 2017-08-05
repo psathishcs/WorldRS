@@ -43,7 +43,7 @@ public class CityRepository {
 	
 	@SuppressWarnings("unchecked")
 	public List<City> getByCountyName(String countryName) {
-		return (List<City>) getSession().createQuery("FROM City ci INNER JOIN Country co ON ci.countryCode = co.countryCode WHERE co.name = :countryName")
+		return (List<City>) getSession().createQuery("FROM City WHERE countryCode IN ( SELECT code FROM Country where name = :countryName")
 			.setParameter("countryName", countryName).list();
 	}
 	
