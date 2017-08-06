@@ -10,8 +10,8 @@ entitymanager:
     packagesToScan: org.world.rs
 spring:
     application:
-        name: world-rs-v1
-        instance_id: world001
+        name: worldrs-v1
+        instance_id: 001
     datasource:
         driverClassName: com.mysql.jdbc.Driver
         url: jdbc:mysql://hadoop.master.com:3306/world

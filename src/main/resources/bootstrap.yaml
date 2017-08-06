@@ -2,7 +2,7 @@
 spring:
   cloud:
     consul:
-      host: docker.server.com
+      host: 192.168.108.130
       port: 8500
       discovery:
         healthCheckInterval: 15s
