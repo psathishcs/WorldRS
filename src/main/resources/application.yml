@@ -11,9 +11,7 @@ entitymanager:
 spring:
     application:
         name: WorldRS
-    cloud:
-        consul:
-            host: docker.server.com
+        instance_id: world001
     datasource:
         driverClassName: com.mysql.jdbc.Driver
         url: jdbc:mysql://hadoop.master.com:3306/world
